@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://julianste15.github.io/loteria/sitemap.xml

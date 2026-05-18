@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablero de Lotería 1-99: Marca los números que han salido – Juego de mesa</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Tablero interactivo para la lotería de números del 1 al 99. Toca cada ficha para registrar las bolas que han salido. Sin registro y con guardado automático.">
+  <meta name="keywords" content="lotería, tablero de lotería, bingo 99, marcar números, bolillero, juego de mesa, lotería online">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://julianste15.github.io/loteria/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://julianste15.github.io/loteria/">
+  <meta property="og:title" content="Tablero de Lotería 1-99: Marca los números que han salido">
+  <meta property="og:description" content="Registra de manera interactiva las bolas que han salido en tu juego de lotería o bingo del 1 al 99.">
+  <meta property="og:image" content="https://julianste15.github.io/loteria/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://julianste15.github.io/loteria/">
+  <meta property="twitter:title" content="Tablero de Lotería 1-99: Marca los números que han salido">
+  <meta property="twitter:description" content="Registra de manera interactiva las bolas que han salido en tu juego de lotería o bingo del 1 al 99.">
+  <meta property="twitter:image" content="https://julianste15.github.io/loteria/assets/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icono.svg">
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="css/estilo.css">
+
+  <!-- Datos estructurados (JSON-LD) para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tablero de Lotería 1-99",
+    "description": "Registra visualmente los números que van saliendo en una lotería de mesa del 1 al 99.",
+    "applicationCategory": "GameApplication",
+    "genre": "Juegos de Mesa / Herramientas",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "operatingSystem": "All",
+    "browserRequirements": "JavaScript habilitado para interactividad"
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Tablero de Lotería 1 - 99</h1>
+    <p class="subtitle">Herramienta interactiva y accesible para marcar las bolas que van saliendo en tu juego de mesa.</p>
+  </header>
+
+  <noscript>
+    <div class="noscript-alert">
+      <strong>¡Atención!</strong> Para poder marcar los números y guardar tu progreso automáticamente, necesitas habilitar JavaScript en tu navegador.
+    </div>
+    <div class="tablero-grid" style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">1</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">2</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">3</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">4</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">5</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">6</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">7</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">8</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">9</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">10</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">11</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">12</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">13</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">14</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">15</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">16</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">17</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">18</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">19</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">20</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">21</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">22</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">23</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">24</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">25</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">26</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">27</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">28</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">29</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">30</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">31</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">32</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">33</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">34</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">35</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">36</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">37</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">38</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">39</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">40</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">41</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">42</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">43</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">44</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">45</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">46</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">47</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">48</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">49</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">50</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">51</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">52</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">53</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">54</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">55</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">56</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">57</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">58</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">59</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">60</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">61</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">62</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">63</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">64</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">65</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">66</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">67</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">68</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">69</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">70</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">71</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">72</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">73</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">74</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">75</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">76</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">77</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">78</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">79</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">80</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">81</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">82</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">83</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">84</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">85</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">86</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">87</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">88</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">89</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">90</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">91</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">92</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">93</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">94</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">95</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">96</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">97</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">98</div>
+          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">99</div>
+    </div>
+  </noscript>
+
+  <main>
+    <section class="control-panel">
+      <div class="stats" aria-live="polite">
+        <div class="stat-box">
+          <span>Salidos:</span>
+          <span id="val-salidos" class="stat-value salidos">0</span>
+        </div>
+        <div class="stat-box">
+          <span>Restantes:</span>
+          <span id="val-restantes" class="stat-value">99</span>
+        </div>
+      </div>
+      
+      <div class="btn-container">
+        <button id="btn-todos" class="btn btn-primary" aria-label="Marcar todos los números (para pruebas)">
+          Marcar Todos
+        </button>
+        <button id="btn-reiniciar" class="btn btn-danger" aria-label="Reiniciar tablero de lotería y borrar memoria">
+          Reiniciar Tablero
+        </button>
+      </div>
+    </section>
+
+    <section class="tablero-container" aria-label="Cuadrícula del tablero de lotería">
+      <div id="tablero-grid" class="tablero-grid" role="grid">
+        <button class="ficha-num" data-numero="1" aria-label="Número 1, no ha salido" aria-pressed="false">1</button>
+        <button class="ficha-num" data-numero="2" aria-label="Número 2, no ha salido" aria-pressed="false">2</button>
+        <button class="ficha-num" data-numero="3" aria-label="Número 3, no ha salido" aria-pressed="false">3</button>
+        <button class="ficha-num" data-numero="4" aria-label="Número 4, no ha salido" aria-pressed="false">4</button>
+        <button class="ficha-num" data-numero="5" aria-label="Número 5, no ha salido" aria-pressed="false">5</button>
+        <button class="ficha-num" data-numero="6" aria-label="Número 6, no ha salido" aria-pressed="false">6</button>
+        <button class="ficha-num" data-numero="7" aria-label="Número 7, no ha salido" aria-pressed="false">7</button>
+        <button class="ficha-num" data-numero="8" aria-label="Número 8, no ha salido" aria-pressed="false">8</button>
+        <button class="ficha-num" data-numero="9" aria-label="Número 9, no ha salido" aria-pressed="false">9</button>
+        <button class="ficha-num" data-numero="10" aria-label="Número 10, no ha salido" aria-pressed="false">10</button>
+        <button class="ficha-num" data-numero="11" aria-label="Número 11, no ha salido" aria-pressed="false">11</button>
+        <button class="ficha-num" data-numero="12" aria-label="Número 12, no ha salido" aria-pressed="false">12</button>
+        <button class="ficha-num" data-numero="13" aria-label="Número 13, no ha salido" aria-pressed="false">13</button>
+        <button class="ficha-num" data-numero="14" aria-label="Número 14, no ha salido" aria-pressed="false">14</button>
+        <button class="ficha-num" data-numero="15" aria-label="Número 15, no ha salido" aria-pressed="false">15</button>
+        <button class="ficha-num" data-numero="16" aria-label="Número 16, no ha salido" aria-pressed="false">16</button>
+        <button class="ficha-num" data-numero="17" aria-label="Número 17, no ha salido" aria-pressed="false">17</button>
+        <button class="ficha-num" data-numero="18" aria-label="Número 18, no ha salido" aria-pressed="false">18</button>
+        <button class="ficha-num" data-numero="19" aria-label="Número 19, no ha salido" aria-pressed="false">19</button>
+        <button class="ficha-num" data-numero="20" aria-label="Número 20, no ha salido" aria-pressed="false">20</button>
+        <button class="ficha-num" data-numero="21" aria-label="Número 21, no ha salido" aria-pressed="false">21</button>
+        <button class="ficha-num" data-numero="22" aria-label="Número 22, no ha salido" aria-pressed="false">22</button>
+        <button class="ficha-num" data-numero="23" aria-label="Número 23, no ha salido" aria-pressed="false">23</button>
+        <button class="ficha-num" data-numero="24" aria-label="Número 24, no ha salido" aria-pressed="false">24</button>
+        <button class="ficha-num" data-numero="25" aria-label="Número 25, no ha salido" aria-pressed="false">25</button>
+        <button class="ficha-num" data-numero="26" aria-label="Número 26, no ha salido" aria-pressed="false">26</button>
+        <button class="ficha-num" data-numero="27" aria-label="Número 27, no ha salido" aria-pressed="false">27</button>
+        <button class="ficha-num" data-numero="28" aria-label="Número 28, no ha salido" aria-pressed="false">28</button>
+        <button class="ficha-num" data-numero="29" aria-label="Número 29, no ha salido" aria-pressed="false">29</button>
+        <button class="ficha-num" data-numero="30" aria-label="Número 30, no ha salido" aria-pressed="false">30</button>
+        <button class="ficha-num" data-numero="31" aria-label="Número 31, no ha salido" aria-pressed="false">31</button>
+        <button class="ficha-num" data-numero="32" aria-label="Número 32, no ha salido" aria-pressed="false">32</button>
+        <button class="ficha-num" data-numero="33" aria-label="Número 33, no ha salido" aria-pressed="false">33</button>
+        <button class="ficha-num" data-numero="34" aria-label="Número 34, no ha salido" aria-pressed="false">34</button>
+        <button class="ficha-num" data-numero="35" aria-label="Número 35, no ha salido" aria-pressed="false">35</button>
+        <button class="ficha-num" data-numero="36" aria-label="Número 36, no ha salido" aria-pressed="false">36</button>
+        <button class="ficha-num" data-numero="37" aria-label="Número 37, no ha salido" aria-pressed="false">37</button>
+        <button class="ficha-num" data-numero="38" aria-label="Número 38, no ha salido" aria-pressed="false">38</button>
+        <button class="ficha-num" data-numero="39" aria-label="Número 39, no ha salido" aria-pressed="false">39</button>
+        <button class="ficha-num" data-numero="40" aria-label="Número 40, no ha salido" aria-pressed="false">40</button>
+        <button class="ficha-num" data-numero="41" aria-label="Número 41, no ha salido" aria-pressed="false">41</button>
+        <button class="ficha-num" data-numero="42" aria-label="Número 42, no ha salido" aria-pressed="false">42</button>
+        <button class="ficha-num" data-numero="43" aria-label="Número 43, no ha salido" aria-pressed="false">43</button>
+        <button class="ficha-num" data-numero="44" aria-label="Número 44, no ha salido" aria-pressed="false">44</button>
+        <button class="ficha-num" data-numero="45" aria-label="Número 45, no ha salido" aria-pressed="false">45</button>
+        <button class="ficha-num" data-numero="46" aria-label="Número 46, no ha salido" aria-pressed="false">46</button>
+        <button class="ficha-num" data-numero="47" aria-label="Número 47, no ha salido" aria-pressed="false">47</button>
+        <button class="ficha-num" data-numero="48" aria-label="Número 48, no ha salido" aria-pressed="false">48</button>
+        <button class="ficha-num" data-numero="49" aria-label="Número 49, no ha salido" aria-pressed="false">49</button>
+        <button class="ficha-num" data-numero="50" aria-label="Número 50, no ha salido" aria-pressed="false">50</button>
+        <button class="ficha-num" data-numero="51" aria-label="Número 51, no ha salido" aria-pressed="false">51</button>
+        <button class="ficha-num" data-numero="52" aria-label="Número 52, no ha salido" aria-pressed="false">52</button>
+        <button class="ficha-num" data-numero="53" aria-label="Número 53, no ha salido" aria-pressed="false">53</button>
+        <button class="ficha-num" data-numero="54" aria-label="Número 54, no ha salido" aria-pressed="false">54</button>
+        <button class="ficha-num" data-numero="55" aria-label="Número 55, no ha salido" aria-pressed="false">55</button>
+        <button class="ficha-num" data-numero="56" aria-label="Número 56, no ha salido" aria-pressed="false">56</button>
+        <button class="ficha-num" data-numero="57" aria-label="Número 57, no ha salido" aria-pressed="false">57</button>
+        <button class="ficha-num" data-numero="58" aria-label="Número 58, no ha salido" aria-pressed="false">58</button>
+        <button class="ficha-num" data-numero="59" aria-label="Número 59, no ha salido" aria-pressed="false">59</button>
+        <button class="ficha-num" data-numero="60" aria-label="Número 60, no ha salido" aria-pressed="false">60</button>
+        <button class="ficha-num" data-numero="61" aria-label="Número 61, no ha salido" aria-pressed="false">61</button>
+        <button class="ficha-num" data-numero="62" aria-label="Número 62, no ha salido" aria-pressed="false">62</button>
+        <button class="ficha-num" data-numero="63" aria-label="Número 63, no ha salido" aria-pressed="false">63</button>
+        <button class="ficha-num" data-numero="64" aria-label="Número 64, no ha salido" aria-pressed="false">64</button>
+        <button class="ficha-num" data-numero="65" aria-label="Número 65, no ha salido" aria-pressed="false">65</button>
+        <button class="ficha-num" data-numero="66" aria-label="Número 66, no ha salido" aria-pressed="false">66</button>
+        <button class="ficha-num" data-numero="67" aria-label="Número 67, no ha salido" aria-pressed="false">67</button>
+        <button class="ficha-num" data-numero="68" aria-label="Número 68, no ha salido" aria-pressed="false">68</button>
+        <button class="ficha-num" data-numero="69" aria-label="Número 69, no ha salido" aria-pressed="false">69</button>
+        <button class="ficha-num" data-numero="70" aria-label="Número 70, no ha salido" aria-pressed="false">70</button>
+        <button class="ficha-num" data-numero="71" aria-label="Número 71, no ha salido" aria-pressed="false">71</button>
+        <button class="ficha-num" data-numero="72" aria-label="Número 72, no ha salido" aria-pressed="false">72</button>
+        <button class="ficha-num" data-numero="73" aria-label="Número 73, no ha salido" aria-pressed="false">73</button>
+        <button class="ficha-num" data-numero="74" aria-label="Número 74, no ha salido" aria-pressed="false">74</button>
+        <button class="ficha-num" data-numero="75" aria-label="Número 75, no ha salido" aria-pressed="false">75</button>
+        <button class="ficha-num" data-numero="76" aria-label="Número 76, no ha salido" aria-pressed="false">76</button>
+        <button class="ficha-num" data-numero="77" aria-label="Número 77, no ha salido" aria-pressed="false">77</button>
+        <button class="ficha-num" data-numero="78" aria-label="Número 78, no ha salido" aria-pressed="false">78</button>
+        <button class="ficha-num" data-numero="79" aria-label="Número 79, no ha salido" aria-pressed="false">79</button>
+        <button class="ficha-num" data-numero="80" aria-label="Número 80, no ha salido" aria-pressed="false">80</button>
+        <button class="ficha-num" data-numero="81" aria-label="Número 81, no ha salido" aria-pressed="false">81</button>
+        <button class="ficha-num" data-numero="82" aria-label="Número 82, no ha salido" aria-pressed="false">82</button>
+        <button class="ficha-num" data-numero="83" aria-label="Número 83, no ha salido" aria-pressed="false">83</button>
+        <button class="ficha-num" data-numero="84" aria-label="Número 84, no ha salido" aria-pressed="false">84</button>
+        <button class="ficha-num" data-numero="85" aria-label="Número 85, no ha salido" aria-pressed="false">85</button>
+        <button class="ficha-num" data-numero="86" aria-label="Número 86, no ha salido" aria-pressed="false">86</button>
+        <button class="ficha-num" data-numero="87" aria-label="Número 87, no ha salido" aria-pressed="false">87</button>
+        <button class="ficha-num" data-numero="88" aria-label="Número 88, no ha salido" aria-pressed="false">88</button>
+        <button class="ficha-num" data-numero="89" aria-label="Número 89, no ha salido" aria-pressed="false">89</button>
+        <button class="ficha-num" data-numero="90" aria-label="Número 90, no ha salido" aria-pressed="false">90</button>
+        <button class="ficha-num" data-numero="91" aria-label="Número 91, no ha salido" aria-pressed="false">91</button>
+        <button class="ficha-num" data-numero="92" aria-label="Número 92, no ha salido" aria-pressed="false">92</button>
+        <button class="ficha-num" data-numero="93" aria-label="Número 93, no ha salido" aria-pressed="false">93</button>
+        <button class="ficha-num" data-numero="94" aria-label="Número 94, no ha salido" aria-pressed="false">94</button>
+        <button class="ficha-num" data-numero="95" aria-label="Número 95, no ha salido" aria-pressed="false">95</button>
+        <button class="ficha-num" data-numero="96" aria-label="Número 96, no ha salido" aria-pressed="false">96</button>
+        <button class="ficha-num" data-numero="97" aria-label="Número 97, no ha salido" aria-pressed="false">97</button>
+        <button class="ficha-num" data-numero="98" aria-label="Número 98, no ha salido" aria-pressed="false">98</button>
+        <button class="ficha-num" data-numero="99" aria-label="Número 99, no ha salido" aria-pressed="false">99</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tablero de Lotería 1-99 Julianste15 &copy; 2026. Diseñado para ofrecer máxima velocidad, accesibilidad y soporte SEO.</p>
+    <p>Hecho con HTML5, CSS Grid y JavaScript Vanilla. Funciona 100% offline y almacena localmente tus datos en el dispositivo.</p>
+  </footer>
+
+  <!-- JS Principal -->
+  <script src="js/tablero.js" defer></script>
+</body>
+</html>
