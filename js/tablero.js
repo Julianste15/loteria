@@ -161,6 +161,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Lógica de Pantalla Completa y Rotación Móvil ---
+  const btnFullscreen = document.getElementById('btn-fullscreen');
+
+  if (btnFullscreen) {
+    btnFullscreen.addEventListener('click', async () => {
+      try {
+        if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+          // Entrar en pantalla completa
+          if (document.documentElement.requestFullscreen) {
+            await document.documentElement.requestFullscreen();
+          } else if (document.documentElement.webkitRequestFullscreen) { // Safari/iOS
+            await document.documentElement.webkitRequestFullscreen();
+          }
+
+          // Intentar bloquear orientación a horizontal (landscape)
+          if (screen.orientation && screen.orientation.lock) {
+            try {
+              await screen.orientation.lock('landscape');
+            } catch (err) {
+              console.log('El bloqueo de orientación no es soportado o fue rechazado:', err);
+            }
+          }
+        } else {
+          // Salir de pantalla completa
+          if (document.exitFullscreen) {
+            await document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            await document.webkitExitFullscreen();
+          }
+          
+          // Desbloquear orientación
+          if (screen.orientation && screen.orientation.unlock) {
+            screen.orientation.unlock();
+          }
+        }
+      } catch (error) {
+        console.error('Error al cambiar modo pantalla completa:', error);
+      }
+    });
+
+    // Escuchar cambios de pantalla completa para sincronizar el estado del botón
+    const alCambiarPantallaCompleta = () => {
+      if (document.fullscreenElement || document.webkitFullscreenElement) {
+        btnFullscreen.textContent = 'Salir ⛶';
+        btnFullscreen.setAttribute('aria-label', 'Salir de pantalla completa');
+        btnFullscreen.classList.replace('btn-secondary', 'btn-primary');
+      } else {
+        btnFullscreen.textContent = 'Pantalla Completa ⛶';
+        btnFullscreen.setAttribute('aria-label', 'Pantalla completa y girar horizontalmente');
+        btnFullscreen.classList.replace('btn-primary', 'btn-secondary');
+        
+        // Desbloquear orientación por seguridad al salir
+        if (screen.orientation && screen.orientation.unlock) {
+          screen.orientation.unlock();
+        }
+      }
+    };
+
+    document.addEventListener('fullscreenchange', alCambiarPantallaCompleta);
+    document.addEventListener('webkitfullscreenchange', alCambiarPantallaCompleta);
+  }
+
   // Inicialización
   restaurarEstadoTablero();
 });

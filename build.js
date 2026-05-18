@@ -96,6 +96,9 @@ ${noscriptListHtml}    </div>
       </div>
       
       <div class="btn-container">
+        <button id="btn-fullscreen" class="btn btn-secondary" aria-label="Pantalla completa y girar horizontalmente">
+          Pantalla Completa ⛶
+        </button>
         <button id="btn-todos" class="btn btn-primary" aria-label="Marcar todos los números (para pruebas)">
           Marcar Todos
         </button>
