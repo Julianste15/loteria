@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const valSalidos = document.getElementById('val-salidos');
   const valRestantes = document.getElementById('val-restantes');
   
-  const TOTAL_NUMEROS = 99;
+  const TOTAL_NUMEROS = 90;
   let numerosMarcados = [];
 
   // 1. Cargar estado inicial desde localStorage

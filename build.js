@@ -1,15 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const TOTAL_NUMEROS = 99;
+const TOTAL_NUMEROS = 90;
 
-// Generar los 99 botones para el HTML interactivo
+// Generar los 90 botones para el HTML interactivo
 let gridButtonsHtml = '';
 for (let i = 1; i <= TOTAL_NUMEROS; i++) {
   gridButtonsHtml += `        <button class="ficha-num" data-numero="${i}" aria-label="Número ${i}, no ha salido" aria-pressed="false">${i}</button>\n`;
 }
 
-// Generar los 99 elementos para la versión noscript (fallback estático para SEO)
+// Generar los 90 elementos para la versión noscript (fallback estático para SEO)
 let noscriptListHtml = '';
 for (let i = 1; i <= TOTAL_NUMEROS; i++) {
   noscriptListHtml += `          <div class="ficha-num" style="background-color: #cbd5e1; color: #334155; display: inline-flex; width: 60px; height: 60px; margin: 5px; align-items: center; justify-content: center; border-radius: 12px; font-weight: bold;">${i}</div>\n`;
@@ -20,26 +20,26 @@ const htmlContent = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tablero de Lotería 1-99: Marca los números que han salido – Juego de mesa</title>
+  <title>Tablero de Lotería 1-90: Marca los números que han salido – Juego de mesa</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Tablero interactivo para la lotería de números del 1 al 99. Toca cada ficha para registrar las bolas que han salido. Sin registro y con guardado automático.">
-  <meta name="keywords" content="lotería, tablero de lotería, bingo 99, marcar números, bolillero, juego de mesa, lotería online">
+  <meta name="description" content="Tablero interactivo para la lotería de números del 1 al 90. Toca cada ficha para registrar las bolas que han salido. Sin registro y con guardado automático.">
+  <meta name="keywords" content="lotería, tablero de lotería, bingo 90, marcar números, bolillero, juego de mesa, lotería online">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://julianste15.github.io/loteria/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://julianste15.github.io/loteria/">
-  <meta property="og:title" content="Tablero de Lotería 1-99: Marca los números que han salido">
-  <meta property="og:description" content="Registra de manera interactiva las bolas que han salido en tu juego de lotería o bingo del 1 al 99.">
+  <meta property="og:title" content="Tablero de Lotería 1-90: Marca los números que han salido">
+  <meta property="og:description" content="Registra de manera interactiva las bolas que han salido en tu juego de lotería o bingo del 1 al 90.">
   <meta property="og:image" content="https://julianste15.github.io/loteria/assets/og-image.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://julianste15.github.io/loteria/">
-  <meta property="twitter:title" content="Tablero de Lotería 1-99: Marca los números que han salido">
-  <meta property="twitter:description" content="Registra de manera interactiva las bolas que han salido en tu juego de lotería o bingo del 1 al 99.">
+  <meta property="twitter:title" content="Tablero de Lotería 1-90: Marca los números que han salido">
+  <meta property="twitter:description" content="Registra de manera interactiva las bolas que han salido en tu juego de lotería o bingo del 1 al 90.">
   <meta property="twitter:image" content="https://julianste15.github.io/loteria/assets/og-image.png">
 
   <!-- Favicon -->
@@ -53,8 +53,8 @@ const htmlContent = `<!DOCTYPE html>
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Tablero de Lotería 1-99",
-    "description": "Registra visualmente los números que van saliendo en una lotería de mesa del 1 al 99.",
+    "name": "Tablero de Lotería 1-90",
+    "description": "Registra visualmente los números que van saliendo en una lotería de mesa del 1 al 90.",
     "applicationCategory": "GameApplication",
     "genre": "Juegos de Mesa / Herramientas",
     "offers": {
@@ -70,7 +70,7 @@ const htmlContent = `<!DOCTYPE html>
 <body>
 
   <header>
-    <h1>Tablero de Lotería 1 - 99</h1>
+    <h1>Tablero de Lotería 1 - 90</h1>
     <p class="subtitle">Herramienta interactiva y accesible para marcar las bolas que van saliendo en tu juego de mesa.</p>
   </header>
 
@@ -91,7 +91,7 @@ ${noscriptListHtml}    </div>
         </div>
         <div class="stat-box">
           <span>Restantes:</span>
-          <span id="val-restantes" class="stat-value">99</span>
+          <span id="val-restantes" class="stat-value">90</span>
         </div>
       </div>
       
@@ -112,7 +112,7 @@ ${gridButtonsHtml}      </div>
   </main>
 
   <footer>
-    <p>Tablero de Lotería 1-99 Julianste15 &copy; 2026. Diseñado para ofrecer máxima velocidad, accesibilidad y soporte SEO.</p>
+    <p>Tablero de Lotería 1-90 Julianste15 &copy; 2026. Diseñado para ofrecer máxima velocidad, accesibilidad y soporte SEO.</p>
     <p>Hecho con HTML5, CSS Grid y JavaScript Vanilla. Funciona 100% offline y almacena localmente tus datos en el dispositivo.</p>
   </footer>
 
@@ -130,4 +130,4 @@ if (!fs.existsSync(assetsDir)) {
 
 // Escribir index.html
 fs.writeFileSync(path.join(__dirname, 'index.html'), htmlContent, 'utf8');
-console.log('¡index.html generado exitosamente con 99 botones estáticos!');
+console.log('¡index.html generado exitosamente con 90 botones estáticos!');

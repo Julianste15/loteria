@@ -1,0 +1,13 @@
+# Ignorar archivo de especificaciones
+specs.md
+
+# Ignorar módulos de Node si se instalan
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
