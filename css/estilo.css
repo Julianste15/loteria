@@ -412,3 +412,61 @@ footer a:hover {
   transform: translateY(-1px);
 }
 
+/* --- Simulación de Pantalla Completa Virtual y Rotación Horizontal (Móviles/iOS) --- */
+body.virtual-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: var(--bg-primary);
+}
+
+/* Ocultar elementos innecesarios para enfocar el tablero en pantalla completa */
+body.virtual-fullscreen header,
+body.virtual-fullscreen footer {
+  display: none !important;
+}
+
+/* Modo retrato (móviles verticales): rotar el tablero 90 grados para emular horizontal */
+@media (orientation: portrait) {
+  body.virtual-fullscreen main {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100vh; /* El ancho del tablero rotado es la altura física del celular */
+    height: 100vw; /* La altura del tablero rotado es el ancho físico del celular */
+    transform: rotate(90deg);
+    transform-origin: top left;
+    z-index: 9999;
+    overflow-y: auto;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    padding: 1.25rem;
+    margin: 0;
+  }
+}
+
+/* Modo paisaje (móviles horizontales, tablets, computadores): expandir normalmente sin rotar */
+@media (orientation: landscape) {
+  body.virtual-fullscreen main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    overflow-y: auto;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    padding: 1.5rem;
+    margin: 0;
+  }
+}
+
+

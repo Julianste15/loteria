@@ -165,44 +165,55 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnFullscreen = document.getElementById('btn-fullscreen');
 
   if (btnFullscreen) {
-    btnFullscreen.addEventListener('click', async () => {
-      try {
-        if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-          // Entrar en pantalla completa
-          if (document.documentElement.requestFullscreen) {
-            await document.documentElement.requestFullscreen();
-          } else if (document.documentElement.webkitRequestFullscreen) { // Safari/iOS
-            await document.documentElement.webkitRequestFullscreen();
-          }
+    // Detectar iOS de manera confiable (iPhone, iPad, iPod)
+    const esIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    // Comprobar soporte nativo real para elementos DOM (excluyendo iPhones donde da undefined en elementos normales)
+    const soporteNativo = !!(document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen) && !esIOS;
 
-          // Intentar bloquear orientación a horizontal (landscape)
-          if (screen.orientation && screen.orientation.lock) {
-            try {
-              await screen.orientation.lock('landscape');
-            } catch (err) {
-              console.log('El bloqueo de orientación no es soportado o fue rechazado:', err);
+    btnFullscreen.addEventListener('click', async () => {
+      if (soporteNativo) {
+        // --- CASO NATIVO (Android, Windows, macOS, iPad, etc.) ---
+        try {
+          if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+            if (document.documentElement.requestFullscreen) {
+              await document.documentElement.requestFullscreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+              await document.documentElement.webkitRequestFullscreen();
+            }
+            if (screen.orientation && screen.orientation.lock) {
+              try {
+                await screen.orientation.lock('landscape');
+              } catch (err) {
+                console.log('El bloqueo de orientación no es soportado:', err);
+              }
+            }
+          } else {
+            if (document.exitFullscreen) {
+              await document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+              await document.webkitExitFullscreen();
             }
           }
-        } else {
-          // Salir de pantalla completa
-          if (document.exitFullscreen) {
-            await document.exitFullscreen();
-          } else if (document.webkitExitFullscreen) {
-            await document.webkitExitFullscreen();
-          }
-          
-          // Desbloquear orientación
-          if (screen.orientation && screen.orientation.unlock) {
-            screen.orientation.unlock();
-          }
+        } catch (error) {
+          console.error('Error en fullscreen nativo:', error);
         }
-      } catch (error) {
-        console.error('Error al cambiar modo pantalla completa:', error);
+      } else {
+        // --- CASO VIRTUAL / SIMULADO (iPhones, Safari iOS, etc.) ---
+        const activo = document.body.classList.toggle('virtual-fullscreen');
+        if (activo) {
+          btnFullscreen.textContent = 'Salir ⛶';
+          btnFullscreen.setAttribute('aria-label', 'Salir del modo pantalla completa');
+          btnFullscreen.classList.replace('btn-secondary', 'btn-primary');
+        } else {
+          btnFullscreen.textContent = 'Pantalla Completa ⛶';
+          btnFullscreen.setAttribute('aria-label', 'Pantalla completa y girar horizontalmente');
+          btnFullscreen.classList.replace('btn-primary', 'btn-secondary');
+        }
       }
     });
 
-    // Escuchar cambios de pantalla completa para sincronizar el estado del botón
-    const alCambiarPantallaCompleta = () => {
+    // Sincronizar el estado del botón si se sale del fullscreen nativo (por ejemplo con la tecla Escape)
+    const alCambiarPantallaCompletaNativa = () => {
       if (document.fullscreenElement || document.webkitFullscreenElement) {
         btnFullscreen.textContent = 'Salir ⛶';
         btnFullscreen.setAttribute('aria-label', 'Salir de pantalla completa');
@@ -212,15 +223,14 @@ document.addEventListener('DOMContentLoaded', () => {
         btnFullscreen.setAttribute('aria-label', 'Pantalla completa y girar horizontalmente');
         btnFullscreen.classList.replace('btn-primary', 'btn-secondary');
         
-        // Desbloquear orientación por seguridad al salir
         if (screen.orientation && screen.orientation.unlock) {
           screen.orientation.unlock();
         }
       }
     };
 
-    document.addEventListener('fullscreenchange', alCambiarPantallaCompleta);
-    document.addEventListener('webkitfullscreenchange', alCambiarPantallaCompleta);
+    document.addEventListener('fullscreenchange', alCambiarPantallaCompletaNativa);
+    document.addEventListener('webkitfullscreenchange', alCambiarPantallaCompletaNativa);
   }
 
   // Inicialización
