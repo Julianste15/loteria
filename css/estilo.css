@@ -469,4 +469,86 @@ body.virtual-fullscreen footer {
   }
 }
 
+/* --- Estilos unificados para Pantalla Completa (Nativa y Virtual) --- */
+
+/* Contenedor principal expandido al 100% */
+body.virtual-fullscreen main,
+main:fullscreen,
+main:-webkit-full-screen {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0.75rem !important;
+  margin: 0 !important;
+  background-color: var(--bg-secondary) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  overflow-y: auto !important;
+}
+
+/* Panel de control ultra compacto */
+body.virtual-fullscreen main .control-panel,
+main:fullscreen .control-panel,
+main:-webkit-full-screen .control-panel {
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.5rem !important;
+  gap: 0.5rem !important;
+}
+
+body.virtual-fullscreen main .control-panel .stats,
+main:fullscreen .control-panel .stats,
+main:-webkit-full-screen .control-panel .stats {
+  gap: 0.5rem !important;
+}
+
+body.virtual-fullscreen main .stat-box,
+main:fullscreen .stat-box,
+main:-webkit-full-screen .stat-box {
+  padding: 0.25rem 0.6rem !important;
+  font-size: 0.8rem !important;
+  border-radius: 8px !important;
+  gap: 0.35rem !important;
+}
+
+body.virtual-fullscreen main button.btn,
+main:fullscreen button.btn,
+main:-webkit-full-screen button.btn {
+  font-size: 0.75rem !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 8px !important;
+  gap: 0.35rem !important;
+}
+
+/* Forzar cuadrícula de 15 columnas para que quepan los 90 números en una sola vista horizontal de 6 filas */
+body.virtual-fullscreen main .tablero-grid,
+main:fullscreen .tablero-grid,
+main:-webkit-full-screen .tablero-grid {
+  grid-template-columns: repeat(15, 1fr) !important;
+  gap: 0.3rem !important;
+  width: 100% !important;
+}
+
+/* Fichas numéricas más compactas */
+body.virtual-fullscreen main .ficha-num,
+main:fullscreen .ficha-num,
+main:-webkit-full-screen .ficha-num {
+  font-size: 0.95rem !important; /* Letra ligeramente más pequeña y nítida */
+  border-radius: 8px !important;
+  aspect-ratio: 1 !important;
+}
+
+/* Ocultar checkmark ✓ o reducirlo para no saturar visualmente */
+body.virtual-fullscreen main .ficha-num::after,
+main:fullscreen .ficha-num::after,
+main:-webkit-full-screen .ficha-num::after {
+  font-size: 0.45rem !important;
+  bottom: 1px !important;
+  right: 3px !important;
+}
+
+
 

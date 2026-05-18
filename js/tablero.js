@@ -174,11 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (soporteNativo) {
         // --- CASO NATIVO (Android, Windows, macOS, iPad, etc.) ---
         try {
+          const mainElement = document.querySelector('main');
           if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-            if (document.documentElement.requestFullscreen) {
-              await document.documentElement.requestFullscreen();
-            } else if (document.documentElement.webkitRequestFullscreen) {
-              await document.documentElement.webkitRequestFullscreen();
+            if (mainElement.requestFullscreen) {
+              await mainElement.requestFullscreen();
+            } else if (mainElement.webkitRequestFullscreen) {
+              await mainElement.webkitRequestFullscreen();
             }
             if (screen.orientation && screen.orientation.lock) {
               try {
