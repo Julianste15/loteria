@@ -5,8 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const valSalidos = document.getElementById('val-salidos');
   const valRestantes = document.getElementById('val-restantes');
   
+  // Modal de confirmación personalizado
+  const modal = document.getElementById('custom-confirm-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalMessage = document.getElementById('modal-message');
+  const btnModalConfirm = document.getElementById('btn-modal-confirm');
+  const btnModalCancel = document.getElementById('btn-modal-cancel');
+  
   const TOTAL_NUMEROS = 90;
   let numerosMarcados = [];
+  let callbackConfirmacion = null;
 
   // 1. Cargar estado inicial desde localStorage
   try {
@@ -75,24 +83,81 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarEstadisticas();
   });
 
-  // 5. Botón Reiniciar
-  btnReiniciar.addEventListener('click', () => {
-    if (numerosMarcados.length === 0) return;
+  // --- Lógica del Modal de Confirmación ---
+  const abrirConfirmacion = (titulo, mensaje, accion, esPeligroso = false) => {
+    modalTitle.textContent = titulo;
+    modalMessage.textContent = mensaje;
+    callbackConfirmacion = accion;
     
-    const confirmar = confirm('¿Estás seguro de que deseas reiniciar todo el tablero?');
-    if (confirmar) {
-      numerosMarcados = [];
-      localStorage.removeItem('numerosMarcados');
-      restaurarEstadoTablero();
+    if (esPeligroso) {
+      btnModalConfirm.className = 'btn btn-danger';
+      btnModalConfirm.textContent = 'Confirmar';
+    } else {
+      btnModalConfirm.className = 'btn btn-primary';
+      btnModalConfirm.textContent = 'Aceptar';
+    }
+    
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    btnModalConfirm.focus();
+  };
+
+  const cerrarConfirmacion = () => {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    callbackConfirmacion = null;
+  };
+
+  btnModalConfirm.addEventListener('click', () => {
+    if (callbackConfirmacion) callbackConfirmacion();
+    cerrarConfirmacion();
+  });
+
+  btnModalCancel.addEventListener('click', cerrarConfirmacion);
+  
+  // Cerrar al hacer clic fuera del modal
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) cerrarConfirmacion();
+  });
+
+  // Cerrar con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      cerrarConfirmacion();
     }
   });
 
-  // 6. Botón Seleccionar Todos (Útil para pruebas rápidas)
+  // 5. Botón Reiniciar con Modal Personalizado
+  btnReiniciar.addEventListener('click', () => {
+    if (numerosMarcados.length === 0) return;
+    
+    abrirConfirmacion(
+      '¿Reiniciar tablero?',
+      'Esta acción vaciará por completo el tablero y el almacenamiento local.',
+      () => {
+        numerosMarcados = [];
+        localStorage.removeItem('numerosMarcados');
+        restaurarEstadoTablero();
+      },
+      true // Acción de peligro
+    );
+  });
+
+  // 6. Botón Seleccionar Todos con Modal Personalizado
   if (btnSeleccionarTodos) {
     btnSeleccionarTodos.addEventListener('click', () => {
-      numerosMarcados = Array.from({ length: TOTAL_NUMEROS }, (_, i) => i + 1);
-      localStorage.setItem('numerosMarcados', JSON.stringify(numerosMarcados));
-      restaurarEstadoTablero();
+      if (numerosMarcados.length === TOTAL_NUMEROS) return;
+
+      abrirConfirmacion(
+        '¿Marcar todos?',
+        'Se marcarán los 90 números del tablero como salidos.',
+        () => {
+          numerosMarcados = Array.from({ length: TOTAL_NUMEROS }, (_, i) => i + 1);
+          localStorage.setItem('numerosMarcados', JSON.stringify(numerosMarcados));
+          restaurarEstadoTablero();
+        },
+        false // Acción normal
+      );
     });
   }
 
