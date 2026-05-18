@@ -275,24 +275,24 @@
         <button class="ficha-num" data-numero="90" aria-label="Número 90, no ha salido" aria-pressed="false">90</button>
       </div>
     </section>
+
+    <!-- Modal de Confirmación Personalizado (Dentro de main para soporte de Fullscreen nativo) -->
+    <div id="custom-confirm-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-message">
+      <div class="modal-content">
+        <h2 id="modal-title" class="modal-title">¿Confirmar acción?</h2>
+        <p id="modal-message" class="modal-message">Descripción de la acción</p>
+        <div class="modal-actions">
+          <button id="btn-modal-cancel" class="btn" aria-label="Cancelar la acción">Cancelar</button>
+          <button id="btn-modal-confirm" class="btn" aria-label="Confirmar la acción e iniciar">Confirmar</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
     <p>Tablero de Lotería 1-90 Julianste15 &copy; 2026. Diseñado para ofrecer máxima velocidad, accesibilidad y soporte SEO.</p>
     <p>Hecho con HTML5, CSS Grid y JavaScript Vanilla. Funciona 100% offline y almacena localmente tus datos en el dispositivo.</p>
   </footer>
-
-  <!-- Modal de Confirmación Personalizado -->
-  <div id="custom-confirm-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-message">
-    <div class="modal-content">
-      <h2 id="modal-title" class="modal-title">¿Confirmar acción?</h2>
-      <p id="modal-message" class="modal-message">Descripción de la acción</p>
-      <div class="modal-actions">
-        <button id="btn-modal-cancel" class="btn" aria-label="Cancelar la acción">Cancelar</button>
-        <button id="btn-modal-confirm" class="btn" aria-label="Confirmar la acción e iniciar">Confirmar</button>
-      </div>
-    </div>
-  </div>
 
   <!-- JS Principal -->
   <script src="js/tablero.js" defer></script>
